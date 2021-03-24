@@ -2,6 +2,10 @@
 
 my personal site, updated march 2021.
 
+## about
+
+after going down a rabbit hole of so many amazing portfolios, i wanted to make my newest revamp a little more fun than just a list of things I've done.
+
 ## process
 
 the site was built in [react.js](https://reactjs.org/) and designed in [figma](https://www.figma.com/).
