@@ -23,7 +23,7 @@
     "react-icons": "^4.2.0",
     "react-router-dom": "^5.2.0",
     "react-router-transition": "^2.1.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^4.0.3",
     "swup": "^2.0.14",
     "vanilla-tilt": "^1.7.0",
     "web-vitals": "^1.1.0"
