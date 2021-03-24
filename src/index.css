@@ -113,8 +113,8 @@ a {
 
 .title-list-container {
   overflow-y: hidden;
-  margin-top: -39px;
-  margin-left: -15px;
+  margin-top: -35px;
+  margin-left: -17px;
   height: 20px;
 }
 
@@ -137,6 +137,10 @@ a {
 }
 
 /* PAGES */
+
+.main {
+  width: 330px;
+}
 
 .about {
   width: 510px;
@@ -276,7 +280,7 @@ a {
 @media only screen and (max-width: 550px) {
   .grid {
     grid-template-columns: 160px 160px;
-    grid-template-rows: 160px 160px;
+    grid-template-rows: 160px 160px 160px;
     grid-gap: 90px 20px;
   }
 }
