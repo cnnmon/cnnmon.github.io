@@ -71,12 +71,8 @@ function Main(props) {
           <p>Previously, I gamified biofeedback therapy at <a href="http://www.playseelife.com/" target="_blank" rel="noreferrer">SeeLife</a>, collaborated on p5.js projects with my <a href="https://buildyourfuture.withgoogle.com/programs/computer-science-summer-institute/" target="_blank" rel="noreferrer">Google CSSI</a> cohort, and exhibited games at <a href="https://www.artandwriting.org/" target="_blank" rel="noreferrer">Art.Write.Now</a> in New York City.
           </p>
           <p>When I’m not coding, you can find me queuing up for League of Legends, binging anime, tending to my fake (and sometimes real) plants, and steeping a cup of tea.</p>
-
-          <h2 className={classes.subtitle}>a little about this site.</h2>
-          <p>After going down a rabbit hole of so many amazing portfolios, I wanted to make my newest revamp a little more fun than just a list of things I've done. It was designed in Figma and built from scratch in React.js.</p>
-
-          <h2 className={classes.subtitle}>contact me.</h2>
-          <p>Want to chat, collaborate, grab boba? Email me anytime at <a href="mailto:tiffanywang@berkeley.edu">tiffanywang@berkeley.edu</a>!</p>
+          <h2 className={classes.subtitle}>contact me</h2>
+          <p>Want to chat, collaborate, grab boba? Email me anytime at <a href="mailto:tiffanywang@berkeley.edu">tiffanywang@berkeley.edu</a>.</p>
         </div>
         <Footer />
       </div>

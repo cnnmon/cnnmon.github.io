@@ -1,7 +1,7 @@
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { createBrowserHistory } from "history";
 import { ThemeProvider } from '@material-ui/core/styles';
-import { Router, Route, NavLink } from "react-router-dom";
+import { HashRouter as Router, Route, NavLink } from "react-router-dom";
 import { AnimatedSwitch } from 'react-router-transition';
 import circle from './assets/circle.png';
 import circles from './assets/circles.png';

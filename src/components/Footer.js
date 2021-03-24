@@ -13,9 +13,6 @@ const useStyles = makeStyles((theme) => createStyles({
   text: {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: -10,
-    color: 'rgba(217, 95, 116, 0.6)',
-    fontWeight: 700,
   },
 }));
 
@@ -39,7 +36,7 @@ function Footer(props) {
         </a>
       </div>
       <div className={classes.text}>
-        <p>made with ♡ by tiffany wang</p>
+        <a href="https://github.com/cnnmon/cnnmon.github.io" target="_blank" rel="noreferrer" className="footer-text">made with ♡ by tiffany wang</a>
       </div>
     </div>
   );

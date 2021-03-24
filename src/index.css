@@ -189,6 +189,15 @@ a {
   text-decoration: underline;
 }
 
+.footer-text {
+  color: rgba(217, 95, 116, 0.6);
+  font-weight: 700;
+}
+
+.footer-text:hover {
+  color: black;
+}
+
 .about a:hover, .project a:hover {
   opacity: 1;
   background: black;
