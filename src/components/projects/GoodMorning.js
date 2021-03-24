@@ -25,13 +25,13 @@ const useStyles = makeStyles((theme) => createStyles({
     paddingTop: 50,
   },
   img: {
-    width: '40%',
     border: '2px solid #000000',
     filter: 'drop-shadow(4px 4px 0px black)',
     marginBottom: 20,
     marginTop: 20,
-    marginRight: 20,
-    height: 160,
+    marginRight: 15,
+    width: 190,
+    height: 150,
   },
 }));
 

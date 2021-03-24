@@ -23,11 +23,11 @@ const useStyles = makeStyles((theme) => createStyles({
     paddingTop: 50,
   },
   img: {
-    width: '70%',
     border: '2px solid #000000',
     filter: 'drop-shadow(5px 5px 0px black)',
     marginBottom: 20,
     marginTop: 20,
+    width: 350,
     height: 280,
   },
 }));
