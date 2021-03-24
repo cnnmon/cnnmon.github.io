@@ -75,7 +75,7 @@ function Coffeelings(props) {
         <h2>about</h2>
         <p>A digital journal and mood tracker chrome extension.<br /><br />Choose from coffee roasts to match your mood, save journal entries, and interact with a mood calendar that grows a little bit every day. Saves data locally. Works offline. Add sugar to taste.</p>
         <h2>why</h2>
-        <p>I started thinking more about journaling last year — specifically, bullet journaling. But even though I could stare at bullet jouranl spreads for hours, I doubted I had the time, energy, or handwriting skills to pull it off. I wanted a way to maintain a layout digitally and update it in seconds.</p>
+        <p>I started thinking more about journaling last year — specifically, bullet journaling. But even though I could stare at bullet journal spreads for hours, I doubted I had the time, energy, or handwriting skills to pull it off. I wanted a way to maintain a layout digitally and update it in seconds.</p>
         <div data-aos="fade-right">
           <img src={pic2} alt="coffeeling's mood tracker screen with a grid, journal text to the left" className={classes.img}></img>
         </div>
