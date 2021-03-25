@@ -7,20 +7,17 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const useStyles = makeStyles((theme) => createStyles({
-  root: {
-    width: '100vw',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    fontSize: 14,
-  },
   hand: {
-    width: 100,
-    height: 90,
+    width: '100%',
   },
   left: {
+    width: '25%',
     display: 'flex',
     alignSelf: 'center',
+    justifyContent: 'center',
+  },
+  right: {
+    width: '75%',
   },
   subtitle: {
     fontWeight: 500,
@@ -44,7 +41,7 @@ function Main(props) {
   }, []);
 
   return (
-    <div className={classes.root}>
+    <div className="main-container">
       <div className="main">
         <div className={classes.content}>
           <motion.div

@@ -67,7 +67,7 @@ a {
   text-shadow: 5px 6px 0px black, 10px 10px 1px rgba(0, 0, 0, 0.2);
   line-height: 20px;
   letter-spacing: 0.1em;
-  font-size: 3em;
+  font-size: 4em;
   padding-bottom: 5px;
   cursor: default;
 }
@@ -113,8 +113,8 @@ a {
 
 .title-list-container {
   overflow-y: hidden;
-  margin-top: -35px;
-  margin-left: -17px;
+  margin-top: -39.4px;
+  margin-left: -15px;
   height: 20px;
 }
 
@@ -138,8 +138,19 @@ a {
 
 /* PAGES */
 
+.main-container {
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14;
+}
+
 .main {
-  width: 330px;
+  display: flex;
+  justify-content: center;
+  width: 460px;
 }
 
 .about {
@@ -254,8 +265,20 @@ a {
     margin-left: 30px;
     margin-top: -20px;
   }
-  .main {
+  .main-container div {
     display: block;
+    width: 90vw;
+    min-width: 240px;
+  }
+  .main-container img {
+    width: 120px;
+  }
+  .main {
+    margin-left: 10vw;
+    width: 100vw;
+  }
+  .main h1 {
+    font-size: 45px;
   }
   .about {
     width: 80vw;
