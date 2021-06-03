@@ -1,80 +1,91 @@
-import React, { useEffect } from 'react';
-import Footer from './Footer';
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import { Typography, Link } from '@material-ui/core';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-import projects from '../assets/projectData.js';
-import { motion } from "framer-motion";
-import AOS from "aos";
-import "aos/dist/aos.css";
+import { theme } from './themeUtils.js';
+import { highlights, more } from '../assets/projectData.js';
 
-const useStyles = makeStyles((theme) => createStyles({
-  root: {
-    width: '100vw',
-    fontSize: 14,
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
+const useStyles = makeStyles((props) => createStyles({
+  root: props => ({
+    color: theme.palette.primary.main,
+    width: window.innerWidth < theme.breakpoints.values.tablet ? '80vw' : '60vw',
+    paddingTop: '30vh',
+    paddingBottom: '20vh',
+    '& h1': {
+      fontSize: props.state.fontSize,
+      fontWeight: props.state.bold ? 'bold' : 'normal',
+      fontStyle: props.state.italic ? 'italic' : 'normal',
+    },
+  }),
+  title: {
+    marginBottom: 20,
   },
-  card: {
-    width: 150,
-    lineHeight: 1,
-    cursor: 'pointer',
-  },
-  cardTitle: {
-    marginBottom: -8,
-    fontSize: 18,
+  image: {
+    width: '16vw',
+    position: 'fixed',
+    top: '25%',
+    right: '20%',
+    zIndex: -1,
+    opacity: 0.5,
   },
   description: {
-    fontWeight: 400,
+    marginLeft: 30,
+    marginBottom: 20,
   },
-  cardImage: {
-    width: '100%',
+  archive: {
+    marginBottom: 10,
   },
 }));
 
-function Projects(props) {
-  const classes = useStyles();
 
-  useEffect(() => {
-    AOS.init({
-      duration: 1000,
-      delay: 150
-    });
-  }, []);
+function Projects(props) {
+  const classes = useStyles(props);
+  const { handleFileClick } = props;
+  const [image, setImage] = useState(null);
+
+  function showImage(project) {
+    setImage(project.img);
+  }
+
+  function hideImage() {
+    setImage(null);
+  }
 
   return (
     <div className={classes.root}>
-      <div className="projects">
-        <h1 className="title wave purple">
-          <span style={{ animationDelay: '0s' }}>p</span>
-          <span style={{ animationDelay: '0.1s' }}>r</span>
-          <span style={{ animationDelay: '0.2s' }}>o</span>
-          <span style={{ animationDelay: '0.3s' }}>j</span>
-          <span style={{ animationDelay: '0.4s' }}>e</span>
-          <span style={{ animationDelay: '0.5s' }}>c</span>
-          <span style={{ animationDelay: '0.6s' }}>t</span>
-          <span style={{ animationDelay: '0.7s' }}>s</span>
-          <span style={{ animationDelay: '0.8s', WebkitTextStroke: '0px black', marginLeft: 5 }}>🚧</span>
-        </h1>
-        <p>Always under construction.</p>
-        <div className="grid" data-aos="fade">
-          {projects.map((p, index) => (
-            <div key={index} className={classes.card}>
-              <motion.div
-                whileHover={{ scale: 1.08 }}
-                whileTap={{ scale: 1.02 }}
-              >
-                <Link to={"/projects/" + p.url}>
-                  <img src={p.img} className={classes.cardImage} alt="" />
-                  <h2 className={classes.cardTitle}>{p.title}</h2>
-                  <p className={classes.description}>{p.description}</p>
-                </Link>
-              </motion.div>
-            </div>
-          ))}
+      <img className={classes.image} style={{ display: image !== null ? 'block' : 'none' }} src={image} alt="project cover" />
+      <Typography variant="h1" className={classes.title}>{props.state.emoticon ?
+        <span>✨📁</span> : <span>highlights</span>}
+      </Typography>
+      {highlights.map((project, index) => (
+        <div key={index}>
+          <Typography variant="body2">
+            <Link
+              onClick={() => { handleFileClick(project); }}
+              onMouseEnter={() => { showImage(project); }}
+              onMouseLeave={() => { hideImage(); }}
+            >
+              <b>[{project.name}]</b>
+            </Link><br />
+            <i>{project.tags}</i><br />
+          </Typography>
+          <Typography variant="body2" className={classes.description}>
+            {project.description}
+          </Typography>
         </div>
-        <Footer />
-      </div>
+      ))}
+      <Typography variant="h1" className={classes.title}>{props.state.emoticon ?
+        <span>🗄️📁</span> : <span>archive</span>}
+      </Typography>
+      <Typography variant="body2">
+        {more.map((project, index) => (
+          <span key={index} className={classes.archive}>
+            <Link target="_blank" rel="noopener noreferrer" href={project.link}>
+              <b>[{project.name}]</b>
+            </Link> {project.description}
+            <br /><br />
+          </span>
+        ))}
+      </Typography>
     </div>
   );
 }
