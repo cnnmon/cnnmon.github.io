@@ -7,7 +7,7 @@ import {
   HelpOutline as HelpOutlineIcon
 } from '@material-ui/icons';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { theme } from './themeUtils.js';
+import { theme, changeSecondary } from './themeUtils.js';
 import construction from '../assets/art/construction.gif';
 
 const useStyles = makeStyles((props) => createStyles({
@@ -51,7 +51,7 @@ const useStyles = makeStyles((props) => createStyles({
 function Customize(props){
   const classes = useStyles();
   const [openDialog, setOpenDialog] = useState(false);
-  const { state, changeState, changeSecondary, setState } = props;
+  const { state, changeState, setState } = props;
 
   function handleStateChange(event) {
     const newKey = event.target.name;
