@@ -1,6 +1,6 @@
 # tiffany's portfolio site
 
-my personal site, updated march 2021.
+my personal site, updated june 2021.
 
 ## about
 
