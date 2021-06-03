@@ -24,8 +24,8 @@ import art7 from './art/art7.jpg';
 import art8 from './art/art8.jpg';
 import art9 from './art/art9.jpg';
 
-const small = { width: '45%' };
-const large = { width: '90%' };
+const small = { width: '40%' };
+const large = { width: '60%' };
 
 export const highlights = [
   {

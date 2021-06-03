@@ -16,14 +16,10 @@ const useStyles = makeStyles((props) => createStyles({
     color: theme.palette.primary.main,
     margin: '0px 10px',
   }),
-  left: {
+  menu: {
     padding: '40px 0px 0px 40px',
-  },
-  right: {
-    width: '100%',
-    padding: '40px 40px 0px 0px',
-    display: 'flex',
-    justifyContent: 'flex-end',
+    display: 'inline-flex',
+    alignItems: 'center',
   },
   hamburger: props => ({
     color: theme.palette.primary.main,
@@ -96,10 +92,8 @@ function Header(props){
 
   return (
     <div className={classes.root}>
-      <div className={classes.left}>
-        <object data={getLogo()} width="60px" height="60px" aria-label="weather-logo"></object>
-      </div>
-      <div className={classes.right}>
+      <div className={classes.menu}>
+        <object data={getLogo()} width="60px" height="60px" aria-label="weather-logo" style={{ marginRight: 10 }}></object>
         { window.innerWidth < theme.breakpoints.values.tablet ? getHamburger() : getLinks() }
       </div>
     </div>

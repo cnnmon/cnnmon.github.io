@@ -31,9 +31,6 @@ const useStyles = makeStyles((props) => createStyles({
     marginLeft: 30,
     marginBottom: 20,
   },
-  archive: {
-    marginBottom: 10,
-  },
 }));
 
 
@@ -76,16 +73,14 @@ function Projects(props) {
       <Typography variant="h1" className={classes.title}>{props.state.emoticon ?
         <span>🗄️📁</span> : <span>archive</span>}
       </Typography>
-      <Typography variant="body2">
-        {more.map((project, index) => (
-          <span key={index} className={classes.archive}>
-            <Link target="_blank" rel="noopener noreferrer" href={project.link}>
-              <b>[{project.name}]</b>
-            </Link> {project.description}
-            <br /><br />
-          </span>
-        ))}
-      </Typography>
+      {more.map((project, index) => (
+        <Typography variant="body2" style={{ marginBottom: 5 }} key={index}>
+          <Link target="_blank" rel="noopener noreferrer" href={project.link}>
+            <b>[{project.name}]</b>
+          </Link> {project.description}
+          <br />
+        </Typography>
+      ))}
     </div>
   );
 }

@@ -105,11 +105,11 @@ function App() {
       <div className={classes.body}>
         {getPage()}
       </div>
-      <div style={{ display: window.innerWidth < theme.breakpoints.values.tablet ? 'none' : 'block' }}>
-        {getCustomization()}
-      </div>
       <div className={classes.header}>
         <Header state={state} changeState={changeState} />
+      </div>
+      <div style={{ display: window.innerWidth < theme.breakpoints.values.tablet ? 'none' : 'block' }}>
+        {getCustomization()}
       </div>
     </MuiThemeProvider>
   );
