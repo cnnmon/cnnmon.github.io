@@ -10,6 +10,10 @@ const useStyles = makeStyles((props) => createStyles({
     width: props.scale.width,
     height: props.scale.height,
     zIndex: 10,
+    opacity: 0.4,
+    '&:hover': {
+      opacity: 1,
+    },
   }),
   handle: props => ({
     width: '100%',
@@ -59,7 +63,9 @@ function Window(props){
       handle='.handle'
       defaultPosition={position ? position : undefined}
     >
-      <div className={classes.window} style={style ? style : undefined}>
+      <div
+        id='window'
+        className={classes.window} style={style ? style : undefined}>
         <div className={`handle ${classes.handle}`}>
           <Typography variant="body1" className={classes.title}>
             {title}
