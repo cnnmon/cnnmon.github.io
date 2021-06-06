@@ -1,4 +1,5 @@
-import { Typography, Link } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
+import { Link } from "react-router-dom";
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { theme } from './themeUtils.js';
 
@@ -6,6 +7,8 @@ const useStyles = makeStyles((props) => createStyles({
   root: props => ({
     color: theme.palette.primary.main,
     margin: '20px 0px',
+    paddingTop: '30vh',
+    paddingBottom: '20vh',
     '& h1': {
       fontSize: props.state.fontSize,
       fontWeight: props.state.bold ? 'bold' : 'normal',
@@ -18,19 +21,9 @@ const useStyles = makeStyles((props) => createStyles({
   details: props => ({
     borderLeft: `2px solid ${theme.palette.primary.main}`,
   }),
-  container: {
-    position: 'absolute',
-    width: '100%',
-    display: 'flex',
-    justifyContent: 'center',
-    left: 0,
-    top: 0,
-    paddingTop: '30vh',
-    paddingBottom: '20vh',
-  },
   content: props => ({
     margin: '20px 0px',
-    width: window.innerWidth < theme.breakpoints.values.tablet ? '80vw' : '60vw',
+    width: window.innerWidth < theme.breakpoints.values.tablet ? theme.breakpoints.values.largeWidth : theme.breakpoints.values.smallWidth,
     '& img': {
       margin: '10px',
     },
@@ -50,8 +43,8 @@ const useStyles = makeStyles((props) => createStyles({
   }),
 }));
 
-function Content(props) {
-  const { file, goBack } = props;
+function Project(props){
+  const { file } = props;
   const classes = useStyles(props);
 
   const getTitle = () => (
@@ -59,31 +52,40 @@ function Content(props) {
       <span>{file.emoticon}‍</span> : <span>{file.name}</span>
   );
 
+  const getDetails = () => (
+    <span>
+      {Object.keys(file.details).map((d, index) => (
+        <span key={index}>
+          <b>{d}</b> {file.details[d]}<br />
+        </span>
+      ))}
+    </span>
+  );
+
+  const getLinks = () => (
+    <span>
+      <b>links </b>
+      {Object.keys(file.links).map((l, index) => (
+        <span key={index}>
+          <a href={file.links[l]} target="_blank" rel="noreferrer">{l}</a> </span>
+      ))}
+      <br />
+    </span>
+  );
+
   return (
     <div className={classes.root}>
       <Typography variant="h1">{getTitle()}</Typography>
       <div className={classes.link}>
-        <Link onClick={() => { goBack(); }}>
-          <u><b>back</b></u>
-        </Link>
+        <Link to={"/projects"}><u><b>back</b></u></Link>
       </div>
-      <div className={classes.details}>{file.details}</div>
+      <Typography variant="body2">
+        {getDetails()}
+        {file.links !== null ? getLinks() : null}
+      </Typography>
       <div className={classes.content}>{file.body}</div>
       <br />
-      <Link onClick={() => { goBack(); }}><u>back to all projects</u></Link>
-    </div>
-  );
-}
-
-function Project(props){
-  const { state, file, goBack } = props;
-  const classes = useStyles(props);
-
-  return (
-    <div id='project'>
-      <div className={classes.container}>
-        <Content state={state} file={file} goBack={goBack} />
-      </div>
+      <Link to={"/projects"}><u>back to all projects</u></Link>
     </div>
   );
 }

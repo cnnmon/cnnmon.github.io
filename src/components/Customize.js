@@ -8,7 +8,7 @@ import {
 } from '@material-ui/icons';
 import { makeStyles, createStyles } from '@material-ui/core/styles';
 import { theme, changeSecondary } from './themeUtils.js';
-import construction from '../assets/art/construction.gif';
+import old_portfolio from '../assets/old_portfolio.png';
 
 const useStyles = makeStyles((props) => createStyles({
   root: props => ({
@@ -41,6 +41,9 @@ const useStyles = makeStyles((props) => createStyles({
   dialog: props => ({
     border: `2px solid ${theme.palette.primary.main}`,
     backgroundColor: theme.palette.secondary.main,
+    '& img': {
+      width: '50%',
+    },
   }),
   dialogText: props => ({
     color: theme.palette.primary.main,
@@ -131,9 +134,15 @@ function Customize(props){
       <Dialog open={openDialog} onClose={handleCloseDialog}>
         <DialogContent className={classes.dialog}>
           <DialogContentText className={classes.dialogText}>
-            <img width='90%' src={construction} alt="website under construction" />
-            <br />
-            Ever since high school, I've been redesigning my site every handful of months to test out new technologies and styles. This particular version was inspired by Google Docs and (I think?) the old version of ArmorGames where you could change the site's color scheme on the sidebar. It was built in Figma, Material UI, and React. Customize as you'd like!
+            Welcome to the *secret page*.
+            <br /><br />
+            I have an unhealthy obsession with cool portfolio sites. Ever since high school, I've been redoing my site every handful of months to try out new technologies and styles (and also just because front-end is fun).
+            <br /><br />
+            If you wanna see the evolution, this was one of my first iterations (circa 2019):
+            <br /><br />
+            <img src={old_portfolio} alt="pink website with illustration of me and the words 'local tea enthusiast'" />
+            <br /><br />
+            This particular version was inspired by Microsoft Word and the sidebar on OneMoreLevel.com where you can change the site's color scheme. It was built in Figma, Material UI, and React. Customize as you'd like!
           </DialogContentText>
         </DialogContent>
       </Dialog>

@@ -1,5 +1,5 @@
 import { Typography } from '@material-ui/core';
-import coffeelings from './projects/coffeelings.png';
+import coffeelings from './projects/coffeelings.gif';
 import coffeelings_pic1 from './projects/coffeelings_pic1.jpg';
 import coffeelings_pic2 from './projects/coffeelings_pic2.jpg';
 import goodmorning from './projects/goodmorning.png';
@@ -7,10 +7,11 @@ import goodmorning_pic1 from './projects/goodmorning_pic1.png';
 import goodmorning_pic2 from './projects/goodmorning_pic2.png';
 import goodmorning_pic3 from './projects/goodmorning_pic3.png';
 import goodmorning_pic4 from './projects/goodmorning_pic4.png';
-import boba from './projects/boba.png';
+import boba from './projects/boba.gif';
 import boba_pic1 from './projects/boba_pic1.png';
 import boba_pic2 from './projects/boba_pic2.gif';
-import cardiocasino from './projects/cardiocasino.png';
+import boba_pic3 from './projects/boba_pic3.gif';
+import cardiocasino from './projects/cardiocasino_pic1.gif';
 import cardiocasino_pic1 from './projects/cardiocasino_pic1.gif';
 import cardiocasino_pic2 from './projects/cardiocasino_pic2.gif';
 import illust from './projects/illust.png';
@@ -30,20 +31,20 @@ const large = { width: '60%' };
 export const highlights = [
   {
     name: "coffeelings",
-    description: "Small, coffee-themed chrome extension for mood tracking, digital journaling, and wellness. 180k+ daily active users.",
+    url: 'coffeelings',
+    description: "Coffee-themed chrome extension for mood tracking, digital journaling, and wellness. 180k+ daily active users.",
     img: coffeelings,
-    tags: 'web, UI/UX, art',
     emoticon: '☕😊📔',
-    details: (
-      <Typography variant="body2">
-        <b>by</b> Tiffany Wang<br />
-        <b>date</b> March 2020<br />
-        <b>tags</b> Web Development, UI/UX, Art<br />
-        <b>tools</b> HTML, CSS, JavaScript, Paint Tool SAI<br />
-        <b>platform</b> <a href="https://chrome.google.com/webstore/detail/coffeelings/hcbddpppkcnfjifbcfnhmelpemdoepkk/" target="_blank" rel="noreferrer">Chrome Web Store</a><br />
-        <b>code</b> <a href="https://github.com/cnnmon/coffeelings" target="_blank" rel="noreferrer">Github</a>
-      </Typography>
-    ),
+    details: {
+      by: "Tiffany Wang",
+      date: "March 2020",
+      tags: "Web Dev, UI/UX, Art",
+      tools: "HTML, CSS, JavaScript, Paint Tool SAI",
+    },
+    links: {
+      "Chrome Web Store": "https://chrome.google.com/webstore/detail/coffeelings/hcbddpppkcnfjifbcfnhmelpemdoepkk/",
+      "GitHub": "https://github.com/cnnmon/coffeelings",
+    },
     body: (
       <div>
         <img src={coffeelings_pic1} style={large} alt="coffeeling's menu screen with a coffee cup and a few boxes of color mood options"></img>
@@ -61,20 +62,21 @@ export const highlights = [
   },
   {
     name: "good morning!",
-    description: "Colorful, feel-good point-and-click game about the perfect morning routine. Played by 206k.",
+    url: 'goodmorning',
+    description: "Colorful, feel-good point-and-click game about doing the perfect morning routine. Played by 206k worldwide.",
     img: goodmorning,
-    tags: 'game, art',
     emoticon: '🌞🛏️🧇',
-    details: (
-      <Typography variant="body2">
-        <b>by</b> Tiffany Wang<br />
-        <b>date</b> January 2019<br />
-        <b>tags</b> Game Development, Art, Animation<br />
-        <b>tools</b> Unity, C#, Paint Tool SAI<br />
-        <b>platform</b> <a href="https://cnnmon.itch.io/goodmorning" target="_blank" rel="noreferrer">itch.io</a>, <a href="https://www.newgrounds.com/portal/view/727878" target="_blank" rel="noreferrer">Newgrounds</a><br />
-        <b>code</b> <a href="https://github.com/cnnmon/goodmorning" target="_blank" rel="noreferrer">Github</a>
-      </Typography>
-    ),
+    details: {
+      by: "Tiffany Wang",
+      date: "January 2019",
+      tags: "Game Dev, Art, Animation",
+      tools: "Unity, C#, Paint Tool SAI",
+    },
+    links: {
+      "itch.io": "https://cnnmon.itch.io/goodmorning",
+      "Newgrounds": "https://www.newgrounds.com/portal/view/727878",
+      "GitHub": "https://github.com/cnnmon/goodmorning",
+    },
     body: (
       <div>
         <img src={goodmorning_pic2} style={small} alt="wake up sequence with the word 'yawn' in a warm bedroom"></img>
@@ -94,19 +96,20 @@ export const highlights = [
   },
   {
     name: "BOBA",
+    url: 'boba',
     description: "Boba-themed, grid-based puzzle game for iOS. Customize your cup, order your favorite flavors and toppings, and get the highest score.",
     img: boba,
     tags: 'mobile, game, art',
     emoticon: '🐰🍵💖',
-    details: (
-      <Typography variant="body2">
-        <b>by</b> Tiffany Wang<br />
-        <b>date</b> August 2020<br />
-        <b>tags</b> Game Development, Art, Animation<br />
-        <b>tools</b> Unity, C#, Paint Tool SAI<br />
-        <b>platform</b> <a href="https://apps.apple.com/us/app/boba-puzzle-game/id1526026791/" target="_blank" rel="noreferrer">iOS App Store</a>
-      </Typography>
-    ),
+    details: {
+      by: "Tiffany Wang",
+      date: "August 2020",
+      tags: "Game Dev, Art, Animation",
+      tools: "Unity, C#, Paint Tool SAI",
+    },
+    links: {
+      "iOS App Store": "https://apps.apple.com/us/app/boba-puzzle-game/id1526026791/",
+    },
     body: (
       <div>
         <img src={boba_pic1} style={large} alt="text: boba, a bunny with boba sitting at a table"></img>
@@ -117,27 +120,29 @@ export const highlights = [
         <img src={boba_pic2} style={large} alt="boba's main screen, puzzle screen, and boba shop customization screen"></img>
         <Typography variant="h2">what</Typography>
         <Typography variant="body2">The puzzle itself is similar to Minesweeper with a twist: there’s 3 dimensions. Once the game starts, square grids are layered on top of each other, where every cell on each layer is randomized to either a topping or empty. The game is top-view, so only the top layer is completely visible and interactable — after all, you can only drink a drink from the top. Every time you tap a cell to“sip”, that cell will be removed and replaced by the cell on the layer right underneath. Your score and amount of drink left will then be affected accordingly.<br/><br/>Now, for the strategy: any cells that don’t contain a topping will contain, instead, a number. That number counts up however many toppings are nearby, like Minesweeper, but with the bombs being what you want to press. The 3rd dimension twist is that “nearby” means checking, not the top, but the grid right underneath the top, where the number just checks for toppings directly below the cell and directly below any cross-neighboring cell areas. So, whenever there’s a cross (or plus) of 1s, that means a topping can be found right underneath the middle — the cross marks the spot — and any higher numbers indicate overlapping crosses of 1s. As you have a limited amount of drink, you need to examine each number closely to see what your best move could be.<br/><br/>The game can becomes more challenging and complex with larger sizes, which can be selected alongside flavor (grid theme) and topping (pearl theme) before every game. You can also customize your boba cup as you’d like in a separate menu.</Typography>
+        <img src={boba_pic3} style={small} alt="boba's main screen, puzzle screen, and boba shop customization screen"></img>
         <Typography variant="h2">how</Typography>
-        <Typography variant="body2">The art was drawn in Paint Tool SAI. The game was built in Unity and C#. I used TMPro for text and heavily used LeanTween to make all the UI transitions dynamic and animated. The bubble screen transition was generated and exported out of Sony Vegas Pro.</Typography>
+        <Typography variant="body2">The art was drawn in Paint Tool SAI. The game was built in Unity and C#. I used TMPro for text and heavily used LeanTween to make all the UI transitions dynamic and animated. The bubble screen transition was generated and exported out of Sony Vegas Pro. The design went through a few iterations, the first being the gif above.</Typography>
       </div>
     ),
   },
   {
     name: "Cleveland Clinic, CardioCasino",
+    url: 'cardiocasino',
     description: "Slots simulator about the randomness of upbringing & its effect on cardiovascular risk later in life. Built for Cleveland Clinic's eXpressions program.",
     img: cardiocasino,
     tags: 'game, art, research, writing',
     emoticon: '💞🎰🧸',
-    details: (
-      <Typography variant="body2">
-        <b>by</b> Tiffany Wang<br />
-        <b>date</b> October 2019<br />
-        <b>tags</b> Game Development, Art, Animation, Writing<br />
-        <b>tools</b> Unity, C#, Paint Tool SAI<br />
-        <b>platform</b> <a href="https://cnnmon.itch.io/cardiocasino" target="_blank" rel="noreferrer">itch.io</a><br />
-        <b>code</b> <a href="https://github.com/cnnmon/CardioCasino" target="_blank" rel="noreferrer">Github</a>
-      </Typography>
-    ),
+    details: {
+      by: "Tiffany Wang",
+      date: "October 2019",
+      tags: "Game Dev, Art, Writing, Sound Editing",
+      tools: "Unity, C#, Paint Tool SAI, Reaper",
+    },
+    links: {
+      "itch.io": "https://cnnmon.itch.io/cardiocasino",
+      "GitHub": "https://github.com/cnnmon/CardioCasino",
+    },
     body: (
       <div>
         <img src={cardiocasino_pic1} style={large} alt="the beginning of the game, a shadow of a child fades in and out, the slot machine is activated and slots roll"></img>
@@ -155,18 +160,18 @@ export const highlights = [
   },
   {
     name: "AP Art, Introspection",
+    url: 'apart',
     description: "Sustained investigation over 9 pieces. Digital art.",
     img: illust,
     tags: 'art',
     emoticon: '🎨🧘🖌️',
-    details: (
-      <Typography variant="body2">
-        <b>by</b> Tiffany Wang<br />
-        <b>date</b> 2019-2020<br />
-        <b>tags</b> Art<br />
-        <b>tools</b> Clip Studio Paint, Photoshop, Paint Tool SAI<br />
-      </Typography>
-    ),
+    details: {
+      by: "Tiffany Wang",
+      date: "September 2019 - May 2020",
+      tags: "Art",
+      tools: "Clip Studio Paint, Photoshop, Paint Tool SAI",
+    },
+    links: null,
     body: (
       <div>
         <Typography variant="body2">In my senior year of high school, I created a digital art portfolio for AP Art based around the word <b>in·tro·spec·tion</b>: the examination or observation of one's own mental and emotional processes.</Typography>
@@ -187,36 +192,64 @@ export const highlights = [
 export const more = [
   {
     name: "Blueprint, Mee Panyar",
-    description: "Year-long mobile app project in partnership with nonprofit Mee Panyar. Built to support rural technicians in the maintenance and operation of solar grids.",
+    details: {
+      date: "September 2020 - May 2021",
+      tags: "Mobile Dev",
+    },
+    description: "Mobile app built to support rural technicians in the maintenance and operation of solar grids.",
     link: "https://github.com/calblueprint/meepanyar",
   },
   {
     name: "Same Home Different Hacks, DAINCE",
-    description: "Learn how to dance with AI!",
+    details: {
+      date: "June 2020",
+      tags: "Web Dev, UI/UX, Art",
+    },
+    description: "Learn how to dance with AI.",
     link: "https://devpost.com/software/same-home-different-hacks-cssi-2020-team-1",
   },
   {
     name: "Ludum Dare 45, Ashes to Ash",
+    details: {
+      date: "October 2019",
+      tags: "Game Dev, Art, Animation",
+    },
     description: "Platformer game about collecting emotions.",
     link: "https://ldjam.com/events/ludum-dare/45/ashes-to-ash/",
   },
   {
+    name: "StudyBuddy",
+    details: {
+      date: "May 2019",
+      tags: "Web Dev, UI/UX",
+    },
+    description: "Website that generates formatted, interactive notes from plaintext.",
+    link: "https://cnnmon.github.io/studybuddy/",
+  },
+  {
     name: "Ludum Dare 44, Slice of Scythe",
+    details: {
+      date: "April 2019",
+      tags: "Game Dev, Art",
+    },
     description: "Point-and-click game about grim reapers/buying hats.",
     link: "https://cnnmon.itch.io/slice-of-scythe",
   },
   {
     name: "Cleveland Clinic, KittyClinic",
+    details: {
+      date: "November 2018",
+      tags: "Game Dev, Art, Writing, Music",
+    },
     description: "Cat clinic simulator about the emotional effects of holistic medicine.",
     link: "https://cnnmon.itch.io/kittyclinic",
   },
   {
-    name: "StudyBuddy",
-    description: "Website that generates formatted, interactive notes from plaintext.",
-    link: "https://cnnmon.github.io/studybuddy/",
-  },
-  {
     name: "Spacebar",
+    details: {
+      date: "September 2018",
+      tags: "Game Dev, Art, Animation, Music",
+    },
     description: "Space-based endless runner and typing game.",
     link: "https://cnnmon.itch.io/spacebar",
   },
