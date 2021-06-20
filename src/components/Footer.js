@@ -1,33 +1,16 @@
-import { Typography } from '@material-ui/core';
-import { makeStyles, createStyles } from '@material-ui/core/styles';
-import { theme } from './themeUtils.js';
+import { AiFillLinkedin, AiFillGithub, AiOutlineTwitter } from 'react-icons/ai';
+import { FaItchIo } from 'react-icons/fa';
 
-const useStyles = makeStyles((props) => createStyles({
-  root: props => ({
-    padding: '30px',
-    color: theme.palette.primary.main,
-    '& p': {
-      fontWeight: props.state.bold ? 'bold' : 'normal',
-      fontStyle: props.state.italic ? 'italic' : 'normal',
-    },
-  }),
-}));
-
-function Footer(props){
-  const classes = useStyles(props);
-
+function Footer() {
   return (
-    <div className={classes.root}>
-      <Typography variant="subtitle2">
-        <span style={{ display: 'inline-flex' }}>
-          made with ♡ in Cleveland, OH.<br />
-          © 2021 — Tiffany Wang
-        </span>
-        <span style={{ float: 'right', textAlign: 'right' }}>
-          let's connect!<br />
-          <b>tiffanywang@berkeley.edu</b>
-        </span>
-      </Typography>
+    <div className="container">
+      <h2 className="green">get in touch!</h2>
+      <p>email me at <a href="mailto:tiffanywang@berkeley.edu">tiffanywang@berkeley.edu</a>.</p>
+      <br />
+      <p >or find me at:
+      <br />
+        <a href="https://www.linkedin.com/in/wtiffany/" target="_blank" rel="noreferrer"><AiFillLinkedin className="icon" />linkedin</a> <a href="https://github.com/cnnmon" target="_blank" rel="noreferrer"><AiFillGithub className="icon" />github</a> <a href="https://cnnmon.itch.io/" target="_blank" rel="noreferrer"><FaItchIo className="icon" />itch.io</a> <a href="https://twitter.com/cnnmonsugar" target="_blank" rel="noreferrer"><AiOutlineTwitter className="icon" />twitter</a>
+      </p>
     </div>
   );
 }

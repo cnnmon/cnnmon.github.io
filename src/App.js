@@ -1,64 +1,40 @@
-import React, { useState } from 'react';
-import { createBrowserHistory } from "history";
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import { theme, changeSecondary } from './components/themeUtils.js';
-import Window from './components/Window.js';
-import Customize from './components/Customize.js';
-import Header from './components/Header.js';
-import Footer from './components/Footer.js';
+import React from 'react';
+import {
+  HashRouter as Router,
+  Switch,
+  Route,
+  NavLink
+} from "react-router-dom";
+import Home from './screens/Home.js';
+import About from './screens/About.js';
+import Work from './screens/Work.js';
+import './App.scss';
 
 function App() {
-  const history = createBrowserHistory();
-  history.listen(_ => {
-      window.scrollTo(0, 0);
-  });
-
-  /* Customization */
-  const [state, setState] = useState({
-    pageTheme: 'newspaper',
-    fontSize: 36,
-    bold: false,
-    italic: false,
-    emoticon: false,
-    projectState: {
-      open: false,
-      project: undefined,
-    }
-  });
-
-  function changeState(newKey, newValue) {
-    if (newKey === 'pageTheme') changeSecondary(newValue);
-    let newState = { ...state };
-    newState[newKey] = newValue;
-    setState(newState);
-  }
-
-  const getCustomization = () => (
-    <Window
-      content={
-        <Customize
-          state={state}
-          changeState={changeState}
-          setState={setState}
-        />
-      }
-      scale={{ width: '380px', height: '140px' }}
-      style={{ bottom: '10%', left: '90%' }}
-      title="drag me ✧・ﾟ:*"
-    />
-  );
 
   return (
-    <MuiThemeProvider theme={theme}>
-      <Header
-        state={state}
-        changeState={changeState}
-      />
-      <Footer state={state} />
-      <div style={{ display: window.innerWidth < theme.breakpoints.values.tablet ? 'none' : 'block' }}>
-        {getCustomization()}
+    <Router>
+      <div className="App">
+        <div className="navigation">
+          <NavLink exact to="/" className="navLink" activeClassName="activeNavLink">TIFFANYWANG</NavLink>
+          <div className="right">
+            <NavLink exact to="/about" className="navLink" activeClassName="activeNavLink">ABOUT</NavLink>
+            <NavLink exact to="/work" className="navLink" activeClassName="activeNavLink">WORK</NavLink>
+          </div>
+        </div>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/work">
+            <Work />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
       </div>
-    </MuiThemeProvider>
+    </Router>
   );
 }
 
